@@ -43,9 +43,11 @@ docker exec -it auth_auth_1 pytest
 
 
 ### APIs Design
-- **Create User**
+##### Create User
 描述：通过提供的用户名和密码创建一个新用户。密码通过 sha256 加密的方式存储。如果用户名已存在，则返回错误信息。
+
 方法： `post`
+
 JSON 参数：
 
 | 名称 | 类型 | 描述 |  
@@ -69,9 +71,11 @@ curl --request POST \
 ```
 
 
-- **Delete User**
+##### Delete User
 描述：根据提供的用户名，如果找到对应的用户，则删除该用户。如果未找到对应用户，则返回错误信息 。
+
 方法： `delete`
+
 JSON 参数：
 
 | 名称 | 类型 | 描述 |  
@@ -93,10 +97,11 @@ curl --request DELETE \
 ```
 
 
-- **Create Role**
+##### Create Role
 描述：通过提供的角色名称，如果角色不存在的话，创建一个新角色。如果角色已经存在，则返回错误信息。
 
 方法： `post`
+
 JSON 参数：
 
 | 名称 | 类型 | 描述 |  
@@ -118,9 +123,11 @@ curl --request POST \
 }'
 ```
 
-- **Delete Role**
+##### Delete Role
 描述：根据提供的 Role 名称，如果找到对应的 Role，则删除该 Role，并且删除和用户相关的记录。如果未找到对应 Role，则返回错误信息 。
+
 方法： `delete`
+
 JSON 参数：
 
 | 名称 | 类型 | 描述 |  
@@ -142,9 +149,11 @@ curl --request DELETE \
 ```
 
 
-- **Add Role to User**
+##### Add Role to User
 描述：根据提供的 User Name 和 Role Name，如果用户没有被添加到该 Role，则添加该 Role。如果用户已经具有该 Role，则什么都不做 。对于 User Name 和 Role Name 不存在的情况，返回对应错误信息。
+
 方法： `post`
+
 JSON 参数：
 
 | 名称 | 类型 | 描述 |  
@@ -167,9 +176,11 @@ curl --request POST \
 }'
 ```
 
-- **Authenticate**
+##### Authenticate
 描述：根据提供的 User Name 和 Password，进行 sha256 hash 验证。如果验证通过，则创建一个新的随机数作为 Token，并返回。如果验证没有通过，则返回错误信息。
+
 方法： `post`
+
 JSON 参数：
 
 | 名称 | 类型 | 描述 |  
@@ -200,9 +211,11 @@ Response sample:
 }
 ```
 
-- **Invalidate Token**
+##### Invalidate Token
 描述：根据提供的 token，使其失效。使 Token 失效的具体做法是把这个 Token 的过期时间改成过去的一个时间点。
+
 方法： `delete`
+
 JSON 参数：
 
 | 名称 | 类型 | 描述 |  
@@ -225,9 +238,11 @@ curl --request DELETE \
 ```
 
 
-- **Check Role**
+##### Check Role
 描述：根据提供的 token 和 Role，验证 token 对应的用户是否具有该 Role，如果有返回 True，如果没有返回 False。
+
 方法： `get`
+
 JSON 参数：
 
 | 名称 | 类型 | 描述 |  
@@ -259,9 +274,11 @@ Response sample：
 ```
 
 
-- **Get All Roles**
+##### Get All Roles
 描述：根据提供的 token，获取该用户所具有的的所有 Role。如果 Token 不是合法的，则返回对应错误信息。
+
 方法： `get`
+
 JSON 参数：
 
 | 名称 | 类型 | 描述 |  
