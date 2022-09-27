@@ -11,6 +11,12 @@
 
 
 
+### Requirements
+- 需要安装 Docker。
+- 应用运行在本地的 `5050` 端口，请确保该端口未被占用。
+
+
+
 ### How to Run 
 该应用使用 Docker 和 Flask 进行搭建。
 首先，把工程下载到本地 （`git clone`）。
@@ -36,9 +42,9 @@ curl --request POST \
 }'
 ```
 
-如果你想运行测试用例，可使用一下命令：
+在程序已经在 Docker 中运行的前提下，可使用以下命令执行测试：
 ```
-docker exec -it auth_auth_1 pytest
+docker exec -it hsbc-auth_auth_1 pytest
 ```
 
 
