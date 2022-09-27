@@ -47,7 +47,7 @@ docker exec -it hsbc-auth_auth_1 pytest
 
 
 ### APIs Design
-**注意**：由于没有使用数据可持久化工具，数据都是存储在内存中的，在项目中对应 `DataStorage` 这个类。 
+**注意**：由于没有使用数据可持久化工具，数据都是存储在内存中的，在项目中对应 `/auth/models/utils/DataStorage` 这个类。 
 ##### Create User
 描述：通过提供的用户名和密码创建一个新用户。密码通过 sha256 加密的方式存储。如果用户名已存在，则返回错误信息。
 

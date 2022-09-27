@@ -6,10 +6,3 @@ class DataStorage:
     user_role_table = []
 
     user_token_table = []
-
-
-class EntityNotFoundError(Exception):
-    pass
-
-class EntityDuplicatedError(Exception):
-    pass
