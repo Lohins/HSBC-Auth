@@ -9,8 +9,6 @@
 - [secrets](https://pypi.org/project/python-secrets/)：使用 `token_hex` 用于生成高度加密的随机数作为 Token。
 - [passlib](https://pypi.org/project/passlib/)：使用 `sha256_crypt` 对密码进行 sha256 加密（生成一个 hash 值）。在验证的时候通过对输入的密码计算 hash 值，比较新旧的 hash 值进行验证。
 
-
-
 ### Requirements
 - 需要安装 Docker。
 - 应用运行在本地的 `5050` 端口，请确保该端口未被占用。
@@ -49,6 +47,7 @@ docker exec -it hsbc-auth_auth_1 pytest
 
 
 ### APIs Design
+**注意**：由于没有使用数据可持久化工具，数据都是存储在内存中的，在项目中对应 `DataStorage` 这个类。 
 ##### Create User
 描述：通过提供的用户名和密码创建一个新用户。密码通过 sha256 加密的方式存储。如果用户名已存在，则返回错误信息。
 
